@@ -11,7 +11,17 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--gray-50); color: var(--gray-800); min-height: 100vh; padding: 1rem; }
 @media (min-width: 768px) { body { padding: 2rem; } }
-.container { max-width: 72rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* ✅ เพิ่ม width: 100% และ align-items: stretch ที่นี่ */
+.container { 
+    max-width: 72rem; 
+    width: 100%; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 1.5rem; 
+}
 
 /* 2. Utility Classes */
 .flex { display: flex; }
@@ -28,6 +38,12 @@ body { font-family: system-ui, -apple-system, sans-serif; background-color: var(
 
 /* 4. Header & Main Card */
 .main-card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid var(--gray-100); overflow: hidden; }
+
+/* ✅ บังคับให้กล่องหลักและกล่องตารางคะแนนมีความกว้าง 100% เท่ากันเสมอ */
+.main-card, .details-grid {
+    width: 100%;
+}
+
 .header-banner { background: linear-gradient(to right, var(--pink-600), var(--slate-800)); padding: 1.5rem; color: white; display: flex; flex-direction: column; gap: 1.5rem; }
 @media (min-width: 768px) { .header-banner { flex-direction: row; justify-content: space-between; align-items: center; padding: 2rem; } }
 
