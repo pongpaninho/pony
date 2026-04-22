@@ -12,7 +12,7 @@
 body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--gray-50); color: var(--gray-800); min-height: 100vh; padding: 1rem; }
 @media (min-width: 768px) { body { padding: 2rem; } }
 
-/* ✅ เพิ่ม width: 100% และ align-items: stretch ที่นี่ */
+/* บังคับให้หน้ากว้างเท่ากัน */
 .container { 
     max-width: 72rem; 
     width: 100%; 
@@ -39,7 +39,7 @@ body { font-family: system-ui, -apple-system, sans-serif; background-color: var(
 /* 4. Header & Main Card */
 .main-card { background: white; border-radius: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid var(--gray-100); overflow: hidden; }
 
-/* ✅ บังคับให้กล่องหลักและกล่องตารางคะแนนมีความกว้าง 100% เท่ากันเสมอ */
+/* บังคับให้กล่องหลักและกล่องตารางคะแนนมีความกว้าง 100% เท่ากันเสมอ */
 .main-card, .details-grid {
     width: 100%;
 }
@@ -163,9 +163,10 @@ input[type=range]::-moz-range-thumb { width: 1.25rem; height: 1.25rem; border-ra
 /* 9. Footer & Print Helpers */
 .footer-info { text-align: center; color: var(--gray-400); font-size: 0.875rem; padding-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; }
 
+/* ✅ แก้ไขสีตัวอักษรสำหรับ Dropdown ตอนสั่งพิมพ์เป็นสีขาว (white !important) */
 @media print {
     .print-hidden { display: none !important; }
-    .bu-input { border: none !important; padding: 0 !important; color: var(--gray-800) !important; background: transparent !important; background-image: none !important; font-size: 1.25rem; font-weight: 700; }
+    .bu-input { border: none !important; padding: 0 !important; color: white !important; background: transparent !important; background-image: none !important; font-size: 1.25rem; font-weight: 700; }
     body { background: white; padding: 0; }
     .container { gap: 1rem; }
 }
