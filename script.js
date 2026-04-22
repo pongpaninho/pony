@@ -240,7 +240,7 @@ function generateSectionHTML(sectionData) {
     return html;
 }
 
-// ฟังก์ชันคำนวณและอัปเดตหน้าจอ
+// ฟังก์ชันคำนวณและอัปเดตหน้าจอ (อัปเดตเรื่องทศนิยม 2 ตำแหน่งแล้ว)
 function calculateAndUpdate() {
     const currentBU = document.getElementById('bu-selector').value;
     let govBaseTotal = 0;
@@ -288,23 +288,12 @@ function calculateAndUpdate() {
     const weightedComp = compPercent * 0.4;
     const finalScore = weightedGov + weightedComp;
 
-    // กำหนดรูปแบบการแสดงผลตาม BU (SLF ให้โชว์ทศนิยม 2 ตำแหน่ง)
-    let displayGovWeighted, displayCompWeighted, displayFinalScore;
-    let displayGovRaw, displayCompRaw;
-
-    if (currentBU === "SLF") {
-        displayGovWeighted = weightedGov.toFixed(2);
-        displayCompWeighted = weightedComp.toFixed(2);
-        displayFinalScore = finalScore.toFixed(2);
-        displayGovRaw = finalGovRaw.toFixed(2);
-        displayCompRaw = compPercent.toFixed(2);
-    } else {
-        displayGovWeighted = Math.round(weightedGov);
-        displayCompWeighted = Math.round(weightedComp);
-        displayFinalScore = Math.round(finalScore);
-        displayGovRaw = Math.round(finalGovRaw);
-        displayCompRaw = Math.round(compPercent);
-    }
+    // บังคับให้แสดงทศนิยม 2 ตำแหน่งสำหรับทุกตัวเลข
+    const displayGovWeighted = weightedGov.toFixed(2);
+    const displayCompWeighted = weightedComp.toFixed(2);
+    const displayFinalScore = finalScore.toFixed(2);
+    const displayGovRaw = finalGovRaw.toFixed(2);
+    const displayCompRaw = compPercent.toFixed(2);
 
     // อัปเดต Summary (ตัวเลข)
     document.getElementById('gov-weighted-score').innerText = displayGovWeighted;
